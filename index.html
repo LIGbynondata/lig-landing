@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LIG | Tu huella deportiva empieza aquí</title>
-  <meta name="description" content="LIG es la red competitiva de pádel que expande tu círculo de juego, construye tu huella deportiva y conecta jugadores, clubes y comunidades en formatos que realmente funcionan." />
+  <meta name="description" content="LIG conecta jugadores, clubes y comunidades para que juegues más y mejores partidos de pádel. Más partners, mejores rivales y partidos que dejan huella." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,7 +33,11 @@
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 96px;
+      -webkit-text-size-adjust: 100%;
+    }
 
     body {
       font-family: "Inter", system-ui, sans-serif;
@@ -53,74 +57,82 @@
       margin: 0 auto;
     }
 
+    section[id] { scroll-margin-top: 20px; }
+
     /* ─── NAV ────────────────────────────────── */
     .topbar {
       position: sticky;
       top: 0;
       z-index: 50;
-      background: rgba(245,242,235,0.82);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(20,20,20,0.07);
+      background: rgba(251,250,246,0.96);
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
+      border-bottom: 1px solid rgba(20,20,20,0.06);
     }
 
     .nav {
-      height: 72px;
+      height: 74px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      gap: 24px;
     }
 
     .brand {
       display: inline-flex;
-      align-items: baseline;
-      gap: 9px;
+      align-items: flex-end;
+      gap: 12px;
       line-height: 1;
+      min-width: 285px;
+      flex-shrink: 0;
+      text-decoration: none;
     }
 
-    .brand-mark {
-      font-size: 32px;
-      font-weight: 900;
-      letter-spacing: -2.5px;
-      color: var(--gold);
+    .brand-logo-lig-wrap {
+      width: 76px; height: 62px;
+      background: rgba(255,255,255,0.30);
+      border: 1px solid rgba(20,20,20,0.014);
+      box-shadow: 0 4px 14px rgba(22,18,10,0.018);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
     }
 
-    .brand-sub {
-      font-size: 10.5px;
-      font-weight: 600;
-      color: rgba(16,16,16,0.50);
-      letter-spacing: 0;
+    .brand-logo-lig { width: 70px; height: auto; display: block; }
+
+    .brand-signature {
+      display: inline-flex; align-items: center; gap: 6px;
+      transform: translateY(-8px); min-width: 0;
+    }
+
+    .brand-by {
+      font-size: 12px; font-weight: 500; color: #111111;
+      line-height: 1; letter-spacing: -0.02em; margin-right: -3px;
+    }
+
+    .brand-logo-nondata {
+      width: 82px; height: auto; display: block;
+      opacity: 0.98; transform: translateY(3px);
     }
 
     .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 26px;
-      font-size: 13px;
-      font-weight: 550;
-      color: rgba(16,16,16,0.55);
+      display: flex; align-items: center; gap: 28px;
+      font-size: 13px; font-weight: 650;
+      color: rgba(16,16,16,0.54);
     }
 
-    .nav-links a { transition: color .15s; }
+    .nav-links a { transition: color .15s ease; }
     .nav-links a:hover { color: var(--black); }
+    .nav-cta { flex-shrink: 0; }
 
     /* ─── BUTTONS ─────────────────────────────── */
     .btn {
-      min-height: 44px;
-      padding: 0 22px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 999px;
-      border: 1.5px solid transparent;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: -0.1px;
+      min-height: 44px; padding: 0 22px;
+      display: inline-flex; align-items: center; justify-content: center;
+      border-radius: 999px; border: 1.5px solid transparent;
+      font-size: 13px; font-weight: 700; letter-spacing: -0.1px;
       cursor: pointer;
       transition: transform .15s, box-shadow .15s, opacity .15s;
-      white-space: nowrap;
-      line-height: 1;
+      white-space: nowrap; line-height: 1;
     }
 
     .btn:hover { transform: translateY(-1px); }
@@ -148,113 +160,75 @@
     .btn-light:hover { background: #fff; }
 
     /* ─── HERO ────────────────────────────────── */
-    .hero {
-      padding: 64px 0 44px;
-    }
+    .hero { padding: 38px 0 44px; }
 
     .hero-grid {
       display: grid;
       grid-template-columns: 1fr minmax(0, 480px);
-      gap: 52px;
-      align-items: center;
+      gap: 52px; align-items: center;
     }
 
     .kicker {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 10.5px;
-      font-weight: 800;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 20px;
+      display: inline-flex; align-items: center; gap: 12px;
+      font-size: 10.5px; font-weight: 800;
+      letter-spacing: .2em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 20px; white-space: nowrap;
     }
-    .kicker::before {
-      content: "";
-      width: 28px;
-      height: 2px;
-      border-radius: 999px;
-      background: var(--gold);
+
+    .kicker::before, .kicker::after {
+      content: ""; width: 15px; height: 2px;
+      border-radius: 999px; background: var(--gold); flex-shrink: 0;
     }
 
     .hero-title {
       font-size: clamp(44px, 5.5vw, 78px);
       line-height: .93;
       letter-spacing: clamp(-2.5px, -0.06em, -4.5px);
-      font-weight: 900;
-      color: var(--black);
-      margin-bottom: 24px;
+      font-weight: 900; color: var(--black); margin-bottom: 24px;
     }
 
     .hero-title .gold { color: var(--gold); }
 
     .hero-copy {
-      font-size: 16.5px;
-      line-height: 1.6;
+      font-size: 16.5px; line-height: 1.55;
       color: rgba(21,21,21,0.62);
-      margin-bottom: 30px;
-      max-width: 560px;
+      margin-bottom: 30px; max-width: 620px;
     }
 
     .hero-copy strong { color: var(--black); font-weight: 700; }
 
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 22px;
-    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 22px; }
 
     .microcopy {
-      display: flex;
-      align-items: center;
-      gap: 9px;
-      color: rgba(21,21,21,0.48);
-      font-size: 12px;
-      font-weight: 550;
+      display: flex; align-items: center; gap: 9px;
+      color: rgba(21,21,21,0.48); font-size: 12px; font-weight: 550;
     }
 
     .micro-dot {
-      width: 7px; height: 7px;
-      border-radius: 50%;
+      width: 7px; height: 7px; border-radius: 50%;
       background: var(--green);
-      box-shadow: 0 0 0 4px rgba(22,163,74,0.12);
-      flex-shrink: 0;
+      box-shadow: 0 0 0 4px rgba(22,163,74,0.12); flex-shrink: 0;
     }
 
     /* ─── HERO VISUAL ─────────────────────────── */
-    .hero-visual {
-      position: relative;
-      height: 530px;
-    }
+    .hero-visual { position: relative; height: 530px; }
 
-    /* Decorative orb */
     .orb {
-      position: absolute;
-      right: -10px;
-      top: 14px;
-      width: 170px; height: 170px;
-      border-radius: 50%;
+      position: absolute; right: -10px; top: 14px;
+      width: 170px; height: 170px; border-radius: 50%;
       background: radial-gradient(circle at 35% 28%, rgba(255,255,255,.65), transparent 22%),
                   linear-gradient(135deg, #F6E47A, #C8A600);
-      box-shadow: 0 20px 52px rgba(200,166,0,0.24);
-      opacity: .88;
+      box-shadow: 0 20px 52px rgba(200,166,0,0.24); opacity: .88;
     }
 
-    /* Paddle shape */
     .paddle {
-      position: absolute;
-      right: -4px;
-      bottom: 26px;
+      position: absolute; right: -4px; bottom: 26px;
       width: 166px; height: 250px;
-      border-radius: 48% 48% 52% 52%;
-      transform: rotate(16deg);
+      border-radius: 48% 48% 52% 52%; transform: rotate(16deg);
       background: linear-gradient(135deg, #2C2C2C, #0E0E0E 70%);
       box-shadow: 0 24px 60px rgba(0,0,0,0.20);
     }
 
-    /* Visual cards */
     .visual-card {
       position: absolute;
       background: rgba(255,255,255,0.96);
@@ -263,21 +237,12 @@
       box-shadow: var(--shadow-card);
     }
 
-    .player-card {
-      left: 0; top: 18px;
-      width: 308px;
-      padding: 22px;
-      z-index: 4;
-    }
+    .player-card { left: 0; top: 18px; width: 308px; padding: 22px; z-index: 4; }
 
-    .player-head {
-      display: flex; align-items: center; gap: 13px;
-      margin-bottom: 20px;
-    }
+    .player-head { display: flex; align-items: center; gap: 13px; margin-bottom: 20px; }
 
     .player-avatar {
-      width: 52px; height: 52px;
-      border-radius: 50%;
+      width: 52px; height: 52px; border-radius: 50%;
       background: linear-gradient(135deg, #F2E8C6, #D4B943);
       border: 2px solid rgba(200,166,0,.55);
       display: grid; place-items: center;
@@ -288,14 +253,10 @@
     .player-name { font-size: 17px; font-weight: 800; letter-spacing: -.4px; color: var(--black); }
     .player-meta { font-size: 10.5px; color: var(--muted); font-weight: 600; margin-top: 3px; }
 
-    .rank-big {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 9px; margin-bottom: 12px;
-    }
+    .rank-big { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; margin-bottom: 12px; }
 
     .metric {
-      border-radius: 16px;
-      padding: 14px;
+      border-radius: 16px; padding: 14px;
       border: 1px solid rgba(20,20,20,.06);
       background: rgba(245,242,235,.7);
     }
@@ -303,8 +264,7 @@
     .metric-label {
       font-size: 9px; font-weight: 800;
       color: rgba(21,21,21,.44);
-      text-transform: uppercase; letter-spacing: .07em;
-      margin-bottom: 6px;
+      text-transform: uppercase; letter-spacing: .07em; margin-bottom: 6px;
     }
 
     .metric-value {
@@ -313,22 +273,13 @@
     }
     .metric-value.gold { color: var(--gold); }
 
-    .card-note {
-      font-size: 10.5px;
-      color: rgba(21,21,21,.52);
-      line-height: 1.4; font-weight: 500;
-    }
+    .card-note { font-size: 10.5px; color: rgba(21,21,21,.52); line-height: 1.4; font-weight: 500; }
 
-    .competition-card {
-      right: 6px; top: 88px;
-      width: 320px; padding: 20px;
-      z-index: 3;
-    }
+    .competition-card { right: 6px; top: 88px; width: 320px; padding: 20px; z-index: 3; }
 
     .card-title-row {
       display: flex; align-items: center;
-      justify-content: space-between; gap: 12px;
-      margin-bottom: 13px;
+      justify-content: space-between; gap: 12px; margin-bottom: 13px;
     }
 
     .card-title {
@@ -339,69 +290,48 @@
 
     .live-pill {
       display: inline-flex; align-items: center;
-      height: 20px; padding: 0 9px;
-      border-radius: 999px;
-      background: #DCFCE7; color: #166534;
-      border: 1px solid #BBF7D0;
+      height: 20px; padding: 0 9px; border-radius: 999px;
+      background: #DCFCE7; color: #166534; border: 1px solid #BBF7D0;
       font-size: 8.5px; font-weight: 900; letter-spacing: .05em;
     }
 
     .competition-name {
       font-size: 26px; font-weight: 900;
-      letter-spacing: -1.2px; color: var(--black);
-      margin-bottom: 7px;
+      letter-spacing: -1.2px; color: var(--black); margin-bottom: 7px;
     }
 
-    .competition-copy {
-      font-size: 12px; color: rgba(21,21,21,.58);
-      line-height: 1.45; margin-bottom: 16px;
-    }
+    .competition-copy { font-size: 12px; color: rgba(21,21,21,.58); line-height: 1.45; margin-bottom: 16px; }
 
     .progress-list { display: grid; gap: 9px; }
 
     .progress-row {
-      display: grid;
-      grid-template-columns: 80px 1fr 38px;
-      align-items: center; gap: 9px;
-      font-size: 10.5px; font-weight: 700;
+      display: grid; grid-template-columns: 80px 1fr 38px;
+      align-items: center; gap: 9px; font-size: 10.5px; font-weight: 700;
     }
 
-    .bar {
-      height: 6px; border-radius: 999px;
-      background: rgba(20,20,20,.07); overflow: hidden;
-    }
-    .bar span {
-      display: block; height: 100%; border-radius: inherit;
-      background: linear-gradient(90deg, #E2C64A, #C8A600);
-    }
+    .bar { height: 6px; border-radius: 999px; background: rgba(20,20,20,.07); overflow: hidden; }
+    .bar span { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #E2C64A, #C8A600); }
 
-    .ranking-card {
-      left: 56px; bottom: 14px;
-      width: 400px; padding: 18px;
-      z-index: 5;
-    }
+    .ranking-card { left: 56px; bottom: 14px; width: 400px; padding: 18px; z-index: 5; }
 
     .rank-row {
-      display: grid;
-      grid-template-columns: 26px 36px 1fr auto;
-      gap: 9px; align-items: center;
-      padding: 9px 0;
+      display: grid; grid-template-columns: 26px 36px 1fr auto;
+      gap: 9px; align-items: center; padding: 9px 0;
       border-bottom: 1px solid rgba(20,20,20,.05);
     }
     .rank-row:last-child { border-bottom: none; }
 
     .rank-pos {
-      width: 26px; height: 26px;
-      border-radius: 50%; display: grid; place-items: center;
+      width: 26px; height: 26px; border-radius: 50%;
+      display: grid; place-items: center;
       background: #F2EBDA; color: var(--black);
       font-size: 10.5px; font-weight: 800;
     }
     .rank-pos.top { color: #fff; background: var(--gold); }
 
     .small-avatar {
-      width: 36px; height: 36px;
-      border-radius: 50%; display: grid; place-items: center;
-      background: #F0E9D8;
+      width: 36px; height: 36px; border-radius: 50%;
+      display: grid; place-items: center; background: #F0E9D8;
       border: 1px solid rgba(20,20,20,.07);
       font-size: 9.5px; font-weight: 800; color: var(--gold);
     }
@@ -411,21 +341,13 @@
       letter-spacing: -.2px; white-space: nowrap;
       overflow: hidden; text-overflow: ellipsis;
     }
-    .rank-player span {
-      display: block; margin-top: 2px;
-      font-size: 9.5px; font-weight: 600; color: var(--muted);
-    }
-
+    .rank-player span { display: block; margin-top: 2px; font-size: 9.5px; font-weight: 600; color: var(--muted); }
     .rank-points { font-size: 12.5px; font-weight: 800; color: var(--black); }
 
     /* ─── SECTIONS ────────────────────────────── */
     .section { padding: 56px 0; }
 
-    .section-head {
-      max-width: 760px;
-      margin: 0 auto 32px;
-      text-align: center;
-    }
+    .section-head { max-width: 760px; margin: 0 auto 32px; text-align: center; }
 
     .section-kicker {
       font-size: 10.5px; font-weight: 800;
@@ -435,19 +357,17 @@
 
     .section h2 {
       font-size: clamp(30px, 3.8vw, 48px);
-      line-height: 1; letter-spacing: -2px;
-      font-weight: 900; margin-bottom: 12px;
+      line-height: 1; letter-spacing: -2px; font-weight: 900; margin-bottom: 12px;
     }
 
-    .section-lead {
-      font-size: 15px; line-height: 1.58;
-      color: rgba(21,21,21,.60);
-    }
+    .section-lead { font-size: 15px; line-height: 1.58; color: rgba(21,21,21,.60); }
 
     /* ─── PROBLEM ─────────────────────────────── */
+    .problem-section-head { text-align: center; margin-bottom: 28px; }
+    .problem-section-head .section-kicker { margin-bottom: 0; }
+
     .problem-grid {
-      display: grid;
-      grid-template-columns: .94fr 1.06fr;
+      display: grid; grid-template-columns: .94fr 1.06fr;
       gap: 16px; align-items: stretch;
     }
 
@@ -455,214 +375,120 @@
       border-radius: var(--r-card-lg);
       background: radial-gradient(circle at 88% 12%, rgba(200,166,0,.15), transparent 38%),
                   linear-gradient(175deg, #1A1A1A, #0D0D0D);
-      color: #fff;
-      padding: 36px;
-      box-shadow: var(--shadow-card);
+      color: #fff; padding: 36px; box-shadow: var(--shadow-card);
       position: relative; overflow: hidden;
+      display: flex; flex-direction: column; justify-content: center;
     }
 
     .problem-dark::before {
-      content: "";
-      position: absolute; inset: 0;
+      content: ""; position: absolute; inset: 0;
       background: radial-gradient(circle at 8% 80%, rgba(200,166,0,.08), transparent 40%);
       pointer-events: none;
     }
 
     .problem-dark h2 {
       font-size: clamp(30px, 3.5vw, 48px);
-      line-height: .97; letter-spacing: -1.8px;
-      margin-bottom: 16px;
+      line-height: .97; letter-spacing: -1.8px; margin-bottom: 16px;
     }
 
-    .problem-dark p {
-      color: rgba(255,255,255,.65);
-      font-size: 14.5px; line-height: 1.58;
-    }
+    .problem-dark p { color: rgba(255,255,255,.68); font-size: 14.5px; line-height: 1.58; }
 
-    .pain-list {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 13px;
-    }
+    .pain-list { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
 
     .pain-card {
-      background: rgba(255,255,255,.90);
-      border: 1px solid rgba(20,20,20,.07);
-      border-radius: var(--r-card);
-      padding: 22px;
-      box-shadow: var(--shadow-soft);
+      min-height: 184px; background: rgba(255,255,255,.90);
+      border: 1px solid rgba(20,20,20,.07); border-radius: var(--r-card);
+      padding: 24px 26px; box-shadow: var(--shadow-soft);
+      display: flex; flex-direction: column; justify-content: center;
       transition: box-shadow .18s, transform .18s;
     }
-    .pain-card:hover {
-      box-shadow: var(--shadow-card);
-      transform: translateY(-2px);
-    }
-
-    .pain-card h3 {
-      font-size: 16px; font-weight: 800;
-      letter-spacing: -.35px; margin-bottom: 8px;
-    }
-
+    .pain-card:hover { box-shadow: var(--shadow-card); transform: translateY(-2px); }
+    .pain-card h3 { font-size: 16px; font-weight: 800; letter-spacing: -.35px; margin-bottom: 9px; color: var(--black); }
     .pain-card p { font-size: 13px; line-height: 1.48; color: rgba(21,21,21,.60); }
 
     /* ─── VALUE ───────────────────────────────── */
-    .value-grid {
-      display: grid; grid-template-columns: repeat(4,1fr); gap: 13px;
-    }
+    .value-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 13px; }
 
     .value-card {
-      background: rgba(255,255,255,.88);
-      border: 1px solid rgba(20,20,20,.07);
-      border-radius: var(--r-card);
-      padding: 24px;
-      box-shadow: var(--shadow-soft);
+      background: rgba(255,255,255,.88); border: 1px solid rgba(20,20,20,.07);
+      border-radius: var(--r-card); padding: 24px; box-shadow: var(--shadow-soft);
       transition: box-shadow .18s, transform .18s;
     }
     .value-card:hover { box-shadow: var(--shadow-card); transform: translateY(-2px); }
 
     .value-num {
-      width: 36px; height: 36px;
-      border-radius: 12px; display: grid; place-items: center;
-      background: #FFF5CC;
-      color: var(--gold);
-      font-size: 14px; font-weight: 900;
-      margin-bottom: 16px;
+      width: 36px; height: 36px; border-radius: 12px;
+      display: grid; place-items: center;
+      background: #FFF5CC; color: var(--gold);
+      font-size: 14px; font-weight: 900; margin-bottom: 16px;
     }
 
     .value-card h3 { font-size: 16px; font-weight: 800; letter-spacing: -.3px; margin-bottom: 8px; }
     .value-card p { font-size: 13px; line-height: 1.48; color: rgba(21,21,21,.60); }
 
     /* ─── NETWORK ─────────────────────────────── */
-    .network-panel {
-      display: grid;
-      grid-template-columns: 1.06fr .94fr;
-      gap: 16px; align-items: stretch;
-    }
+    .network-panel { display: grid; grid-template-columns: 1.06fr .94fr; gap: 16px; align-items: stretch; }
 
     .network-copy {
-      background: rgba(255,255,255,.90);
-      border: 1px solid rgba(20,20,20,.07);
-      border-radius: var(--r-card-lg);
-      padding: 36px;
-      box-shadow: var(--shadow-card);
-      position: relative; overflow: hidden;
+      background: rgba(255,255,255,.90); border: 1px solid rgba(20,20,20,.07);
+      border-radius: var(--r-card-lg); padding: 36px;
+      box-shadow: var(--shadow-card); position: relative; overflow: hidden;
     }
 
     .network-copy::after {
-      content: "";
-      position: absolute; top: 0; left: 28px; right: 28px;
+      content: ""; position: absolute; top: 0; left: 28px; right: 28px;
       height: 2.5px; border-radius: 999px;
       background: linear-gradient(90deg, transparent, var(--gold), transparent);
     }
 
-    .network-copy h2 {
-      font-size: clamp(28px, 3.5vw, 46px);
-      line-height: .97; letter-spacing: -1.8px;
-      margin-bottom: 14px;
-    }
-
-    .network-copy > p {
-      color: rgba(21,21,21,.60);
-      font-size: 14.5px; line-height: 1.58;
-      margin-bottom: 16px;
-    }
+    .network-copy h2 { font-size: clamp(28px, 3.5vw, 46px); line-height: .97; letter-spacing: -1.8px; margin-bottom: 14px; }
+    .network-copy > p { color: rgba(21,21,21,.60); font-size: 14.5px; line-height: 1.58; margin-bottom: 16px; }
 
     .network-list { display: grid; gap: 9px; margin-top: 16px; }
 
     .network-item {
       display: flex; align-items: flex-start; gap: 9px;
-      font-size: 13px; color: rgba(21,21,21,.62);
-      line-height: 1.4; font-weight: 500;
+      font-size: 13px; color: rgba(21,21,21,.62); line-height: 1.4; font-weight: 500;
     }
 
-    .network-dot {
-      margin-top: 5px; width: 7px; height: 7px;
-      border-radius: 999px; background: var(--gold); flex-shrink: 0;
-    }
+    .network-dot { margin-top: 5px; width: 7px; height: 7px; border-radius: 999px; background: var(--gold); flex-shrink: 0; }
 
     .network-stat {
       border-radius: var(--r-card-lg);
       background: radial-gradient(circle at 88% 12%, rgba(200,166,0,.16), transparent 38%),
                   linear-gradient(175deg, #1A1A1A, #0D0D0D);
-      color: #fff;
-      padding: 36px;
-      box-shadow: var(--shadow-card);
+      color: #fff; padding: 36px; box-shadow: var(--shadow-card);
       display: grid; align-content: center; gap: 14px;
     }
 
     .big-stat {
       font-size: clamp(44px, 6vw, 76px);
-      line-height: .88; font-weight: 900;
-      letter-spacing: -3px; color: var(--gold);
+      line-height: .88; font-weight: 900; letter-spacing: -3px; color: var(--gold);
     }
 
-    .network-stat h3 {
-      font-size: 22px; font-weight: 900;
-      letter-spacing: -.8px; line-height: 1.08;
-    }
-
+    .network-stat h3 { font-size: 22px; font-weight: 900; letter-spacing: -.8px; line-height: 1.08; }
     .network-stat p { color: rgba(255,255,255,.64); font-size: 13.5px; line-height: 1.52; }
 
-    /* ─── STEPS ───────────────────────────────── */
-    .steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 13px; }
-
-    .step-card {
-      background: rgba(255,255,255,.88);
-      border: 1px solid rgba(20,20,20,.07);
-      border-radius: var(--r-card);
-      padding: 24px;
-      box-shadow: var(--shadow-soft);
-      position: relative;
-      transition: box-shadow .18s, transform .18s;
-    }
-    .step-card:hover { box-shadow: var(--shadow-card); transform: translateY(-2px); }
-
-    .step-index {
-      font-size: 11px; font-weight: 800;
-      letter-spacing: .1em; color: var(--gold);
-      margin-bottom: 16px; display: block;
-    }
-
-    .step-card h3 { font-size: 16px; font-weight: 800; letter-spacing: -.3px; margin-bottom: 8px; }
-    .step-card p { font-size: 13px; line-height: 1.48; color: rgba(21,21,21,.60); }
-
     /* ─── ECOSYSTEM ───────────────────────────── */
-    .ecosystem {
-      display: grid;
-      grid-template-columns: .94fr 1.06fr;
-      gap: 16px; align-items: stretch;
-    }
+    .ecosystem { display: grid; grid-template-columns: .94fr 1.06fr; gap: 16px; align-items: stretch; }
 
     .ecosystem-copy {
       background: radial-gradient(circle at 88% 10%, rgba(200,166,0,.15), transparent 36%),
                   linear-gradient(175deg, #1A1A1A, #0D0D0D);
-      color: #fff;
-      border-radius: var(--r-card-lg);
-      padding: 36px;
-      box-shadow: var(--shadow-card);
-      min-height: 360px;
+      color: #fff; border-radius: var(--r-card-lg); padding: 36px;
+      box-shadow: var(--shadow-card); min-height: 360px;
       display: flex; flex-direction: column; justify-content: space-between;
       position: relative; overflow: hidden;
     }
 
-    .ecosystem-copy h2 {
-      font-size: clamp(28px, 3.5vw, 46px);
-      line-height: .97; letter-spacing: -1.8px;
-      margin-bottom: 14px;
-    }
-
-    .ecosystem-copy p {
-      color: rgba(255,255,255,.65);
-      font-size: 14.5px; line-height: 1.58;
-    }
+    .ecosystem-copy h2 { font-size: clamp(28px, 3.5vw, 46px); line-height: .97; letter-spacing: -1.8px; margin-bottom: 14px; }
+    .ecosystem-copy p { color: rgba(255,255,255,.65); font-size: 14.5px; line-height: 1.58; }
 
     .ecosystem-list { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
 
     .eco-card {
-      background: rgba(255,255,255,.88);
-      border: 1px solid rgba(20,20,20,.07);
-      border-radius: var(--r-card);
-      padding: 22px;
-      box-shadow: var(--shadow-soft);
+      background: rgba(255,255,255,.88); border: 1px solid rgba(20,20,20,.07);
+      border-radius: var(--r-card); padding: 22px; box-shadow: var(--shadow-soft);
       transition: box-shadow .18s, transform .18s;
     }
     .eco-card:hover { box-shadow: var(--shadow-card); transform: translateY(-2px); }
@@ -673,226 +499,74 @@
     .cta { padding: 44px 0 72px; }
 
     .cta-panel {
-      border-radius: var(--r-card-lg);
-      padding: 48px 52px;
+      border-radius: var(--r-card-lg); padding: 48px 52px;
       background: radial-gradient(circle at 80% 40%, rgba(255,255,255,.35), transparent 28%),
                   linear-gradient(135deg, #DFC348, #C8A600);
       box-shadow: var(--shadow-gold);
-      display: grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 28px; align-items: center;
-      position: relative; overflow: hidden;
+      display: grid; grid-template-columns: 1.1fr .9fr;
+      gap: 28px; align-items: center; position: relative; overflow: hidden;
     }
 
     .cta-panel::before {
-      content: "";
-      position: absolute; bottom: -60px; left: -40px;
-      width: 280px; height: 280px;
-      border-radius: 50%;
-      background: rgba(255,255,255,.09);
-      pointer-events: none;
+      content: ""; position: absolute; bottom: -60px; left: -40px;
+      width: 280px; height: 280px; border-radius: 50%;
+      background: rgba(255,255,255,.09); pointer-events: none;
     }
 
     .cta-panel h2 {
       font-size: clamp(30px, 3.8vw, 50px);
-      line-height: .95; letter-spacing: -2px;
-      font-weight: 900; margin-bottom: 12px; color: var(--black);
+      line-height: .95; letter-spacing: -2px; font-weight: 900; margin-bottom: 12px; color: var(--black);
     }
 
-    .cta-panel p {
-      color: rgba(15,15,15,.64);
-      font-size: 15px; line-height: 1.52; font-weight: 500;
-    }
-
+    .cta-panel p { color: rgba(15,15,15,.64); font-size: 15px; line-height: 1.52; font-weight: 500; }
     .cta-actions { display: grid; gap: 10px; justify-content: end; }
-
-    /* ─── BENEFITS ───────────────────────────────── */
-    .benefits-header {
-      background: radial-gradient(circle at 88% 12%, rgba(200,166,0,.16), transparent 38%),
-                  linear-gradient(175deg, #1A1A1A, #0D0D0D);
-      border-radius: var(--r-card-lg);
-      padding: 36px;
-      color: #fff;
-      margin-bottom: 16px;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: center;
-      gap: 28px;
-      box-shadow: var(--shadow-card);
-    }
-
-    .benefits-header h2 {
-      font-size: clamp(28px, 3.5vw, 46px);
-      line-height: .97; letter-spacing: -1.8px; font-weight: 900;
-      margin-bottom: 10px;
-    }
-
-    .benefits-header p {
-      color: rgba(255,255,255,.62);
-      font-size: 14.5px; line-height: 1.55;
-      max-width: 580px;
-    }
-
-    .benefits-badge {
-      display: inline-flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      width: 110px; height: 110px;
-      border-radius: 50%;
-      background: radial-gradient(circle at 35% 28%, rgba(255,255,255,.22), transparent 22%),
-                  linear-gradient(135deg, #E2C64A, #C8A600);
-      box-shadow: var(--shadow-gold);
-      flex-shrink: 0;
-      text-align: center;
-      gap: 2px;
-    }
-
-    .benefits-badge strong {
-      font-size: 28px; font-weight: 900;
-      letter-spacing: -1px; color: var(--black);
-      line-height: 1;
-    }
-
-    .benefits-badge span {
-      font-size: 9px; font-weight: 800;
-      text-transform: uppercase; letter-spacing: .1em;
-      color: rgba(0,0,0,.55);
-    }
-
-    .benefits-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 13px;
-    }
-
-    .benefit-card {
-      background: rgba(255,255,255,.90);
-      border: 1px solid rgba(20,20,20,.07);
-      border-radius: var(--r-card);
-      padding: 26px 22px;
-      box-shadow: var(--shadow-soft);
-      display: flex; flex-direction: column; gap: 14px;
-      transition: box-shadow .18s, transform .18s;
-    }
-    .benefit-card:hover { box-shadow: var(--shadow-card); transform: translateY(-2px); }
-
-    .benefit-icon {
-      width: 42px; height: 42px;
-      border-radius: 14px;
-      background: #FFF5CC;
-      display: grid; place-items: center;
-      font-size: 20px;
-      flex-shrink: 0;
-    }
-
-    .benefit-card h3 {
-      font-size: 16px; font-weight: 800;
-      letter-spacing: -.35px; color: var(--black);
-      margin: 0;
-    }
-
-    .benefit-card p {
-      font-size: 13px; line-height: 1.5;
-      color: rgba(21,21,21,.60); margin: 0;
-    }
-
-    .benefit-tag {
-      display: inline-flex; align-items: center;
-      height: 22px; padding: 0 10px;
-      border-radius: 999px;
-      background: #FFF5CC;
-      color: var(--gold);
-      border: 1px solid rgba(200,166,0,.25);
-      font-size: 10px; font-weight: 800;
-      letter-spacing: .04em;
-      width: fit-content;
-      margin-top: auto;
-    }
-
-    @media (max-width: 980px) {
-      .benefits-grid { grid-template-columns: repeat(2,1fr); }
-      .benefits-header { grid-template-columns: 1fr; }
-      .benefits-badge { display: none; }
-    }
-
-    @media (max-width: 640px) {
-      .benefits-grid { grid-template-columns: 1fr; }
-      .benefits-header { padding: 24px; border-radius: 20px; }
-    }
 
     /* ─── FOOTER ──────────────────────────────── */
     .footer {
       border-top: 1px solid rgba(20,20,20,.07);
-      background: rgba(255,255,255,.50);
-      padding: 26px 0;
+      background: rgba(255,255,255,.50); padding: 26px 0;
     }
 
     .footer-inner {
-      display: flex; align-items: center;
-      justify-content: space-between; gap: 16px;
-      flex-wrap: wrap;
-      color: var(--muted); font-size: 12px; font-weight: 500;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 16px; flex-wrap: wrap; color: var(--muted); font-size: 12px; font-weight: 500;
     }
 
     .footer-brand { display: inline-flex; align-items: baseline; gap: 8px; }
-    .footer-brand strong {
-      font-size: 22px; color: var(--gold);
-      font-weight: 900; letter-spacing: -1.2px;
-    }
+    .footer-brand strong { font-size: 22px; color: var(--gold); font-weight: 900; letter-spacing: -1.2px; }
 
-    /* ─── DIVIDER ─────────────────────────────── */
-    .divider {
-      width: 100%; height: 1px;
-      background: var(--line);
-      margin: 0;
-    }
+    .divider { width: 100%; height: 1px; background: var(--line); margin: 0; }
 
     /* ─── MODAL ───────────────────────────────── */
     .modal {
       position: fixed; inset: 0; z-index: 100;
-      display: none; place-items: center;
-      padding: 22px;
+      display: none; place-items: center; padding: 22px;
       background: rgba(10,10,10,.48);
-      backdrop-filter: blur(12px);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
     }
     .modal.show { display: grid; }
 
     .modal-card {
-      width: min(500px, 100%);
-      background: var(--white);
+      width: min(500px, 100%); background: var(--white);
       border-radius: 28px; padding: 32px;
       box-shadow: 0 28px 80px rgba(0,0,0,.28);
-      border: 1px solid rgba(255,255,255,.7);
+      border: 1px solid rgba(255,255,255,.70);
     }
 
-    .modal-card h3 {
-      font-size: 26px; line-height: 1.06;
-      font-weight: 900; letter-spacing: -1.1px;
-      margin-bottom: 10px;
-    }
-
-    .modal-card p {
-      color: rgba(21,21,21,.62); line-height: 1.52;
-      font-size: 14px; margin-bottom: 22px;
-    }
-
+    .modal-card h3 { font-size: 26px; line-height: 1.06; font-weight: 900; letter-spacing: -1.1px; margin-bottom: 10px; color: var(--black); }
+    .modal-card p { color: rgba(21,21,21,.62); line-height: 1.52; font-size: 14px; margin-bottom: 22px; }
     .modal-actions { display: flex; gap: 10px; flex-wrap: wrap; }
 
     /* ─── RESPONSIVE ──────────────────────────── */
     @media (max-width: 980px) {
       .nav-links { display: none; }
 
-      .hero-grid,
-      .problem-grid,
-      .network-panel,
-      .ecosystem,
-      .cta-panel {
+      .hero-grid, .problem-grid, .network-panel, .ecosystem, .cta-panel {
         grid-template-columns: 1fr;
       }
 
       .hero-visual { height: 480px; }
-
       .value-grid, .steps { grid-template-columns: repeat(2,1fr); }
-
       .cta-actions { justify-content: stretch; }
       .cta-actions .btn { width: 100%; }
       .cta-panel { padding: 36px; }
@@ -900,9 +574,13 @@
 
     @media (max-width: 640px) {
       .wrap { width: calc(100% - 28px); }
-      .nav { height: 64px; }
-      .brand-mark { font-size: 28px; }
-      .brand-sub { display: none; }
+      .nav { height: 72px; gap: 12px; }
+      .brand { min-width: auto; gap: 8px; }
+      .brand-logo-lig-wrap { width: 56px; height: 56px; }
+      .brand-logo-lig { width: 42px; height: auto; }
+      .brand-signature { gap: 4px; padding-bottom: 8px; }
+      .brand-by { font-size: 11px; }
+      .brand-logo-nondata { width: 47px; height: auto; transform: translateY(5px); }
       .nav-cta .btn { min-height: 38px; padding: 0 14px; font-size: 12px; }
 
       .hero { padding: 34px 0 20px; }
@@ -912,15 +590,9 @@
       .hero-actions .btn { width: 100%; }
       .microcopy { align-items: flex-start; line-height: 1.35; }
 
-      .hero-visual {
-        height: auto;
-        display: grid; gap: 11px; margin-top: 24px;
-      }
+      .hero-visual { height: auto; display: grid; gap: 11px; margin-top: 24px; }
 
-      .visual-card {
-        position: relative;
-        width: 100%; left: auto; right: auto; top: auto; bottom: auto;
-      }
+      .visual-card { position: relative; width: 100%; left: auto; right: auto; top: auto; bottom: auto; }
 
       .player-card, .competition-card, .ranking-card { width: 100%; padding: 18px; }
       .orb, .paddle, .ranking-card { display: none; }
@@ -930,16 +602,16 @@
       .section { padding: 36px 0; }
       .section-head { text-align: left; margin-bottom: 18px; }
 
-      .section h2,
-      .problem-dark h2,
-      .network-copy h2,
-      .ecosystem-copy h2,
-      .cta-panel h2 { font-size: 30px; letter-spacing: -1.3px; }
+      .section h2, .problem-dark h2, .network-copy h2, .ecosystem-copy h2, .cta-panel h2 {
+        font-size: 30px; letter-spacing: -1.3px;
+      }
 
-      .value-grid, .steps, .ecosystem-list, .pain-list { grid-template-columns: 1fr; }
+      .value-grid, .ecosystem-list, .pain-list { grid-template-columns: 1fr; }
 
-      .pain-card, .value-card, .step-card, .eco-card,
-      .ecosystem-copy, .problem-dark, .network-copy, .network-stat { border-radius: 20px; }
+      .pain-card, .value-card, .eco-card,
+      .ecosystem-copy, .problem-dark, .network-copy, .network-stat {
+        border-radius: 20px;
+      }
 
       .ecosystem-copy { min-height: auto; gap: 26px; }
       .cta { padding: 24px 0 48px; }
@@ -952,19 +624,24 @@
 </head>
 
 <body>
+
   <!-- NAV -->
   <header class="topbar">
     <div class="wrap nav">
-      <a class="brand" href="#">
-        <span class="brand-mark">LIG</span>
-        <span class="brand-sub">by NonData&Co</span>
+      <a class="brand" href="#" aria-label="LIG by NonData&Co">
+        <span class="brand-logo-lig-wrap">
+          <img class="brand-logo-lig" src="assets/logo-lig.png" alt="LIG">
+        </span>
+        <span class="brand-signature">
+          <span class="brand-by">by</span>
+          <img class="brand-logo-nondata" src="assets/logo-nondata.png" alt="NonData&Co">
+        </span>
       </a>
 
       <nav class="nav-links" aria-label="Navegación principal">
         <a href="#problema">Por qué LIG</a>
         <a href="#idea">Qué es</a>
         <a href="#como-funciona">Cómo funciona</a>
-        <a href="#beneficios">Beneficios</a>
         <a href="#comunidades">Clubes</a>
       </nav>
 
@@ -980,26 +657,28 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div>
-          <div class="kicker">Red competitiva de pádel</div>
+          <div class="kicker">Juega más. Compite mejor. Construye tu huella.</div>
 
           <h1 class="hero-title">
-            Tu círculo de pádel<br>es más grande<br><span class="gold">de lo que crees.</span>
+            Tu círculo de<br>
+            pádel puede ser<br>
+            más grande<br>
+            <span class="gold">de lo que crees.</span>
           </h1>
 
           <p class="hero-copy">
-            LIG es la red que conecta jugadores, clubes y comunidades en formatos competitivos reales.
-            <strong>Rotas parejas, mides tu nivel, construyes tu huella deportiva</strong> y accedes
-            a torneos premium dentro del universo LIG.
+            Cada partido es una oportunidad de crecer, competir y conectar. LIG lo hace posible.
+            Más partners, mejores rivales y partidos que dejan huella.
           </p>
 
           <div class="hero-actions">
-            <button class="btn btn-gold" onclick="goToForm()">Únete a LIG a LIG</button>
-            <a class="btn btn-light" href="#comunidades">Soy club o comunidad</a>
+            <button class="btn btn-gold" onclick="goToForm()">Únete a LIG</button>
+            <button class="btn btn-light" onclick="goToForm()">Soy club o comunidad</button>
           </div>
 
           <div class="microcopy">
             <span class="micro-dot"></span>
-            <span>Abriendo acceso a los primeros jugadores, clubes y comunidades fundadoras.</span>
+            <span>Abriendo acceso a jugadores, clubes y comunidades fundadoras.</span>
           </div>
         </div>
 
@@ -1091,118 +770,74 @@
 
     <!-- ─── PROBLEMA ──────────────────────────────── -->
     <section class="section" id="problema">
-      <div class="wrap problem-grid">
-        <div class="problem-dark">
+      <div class="wrap">
+        <div class="problem-section-head">
           <div class="section-kicker">Por qué LIG existe</div>
-          <h2>El pádel creció. La infraestructura social para jugarlo bien, no.</h2>
-          <p>
-            Hay más jugadores, más canchas y más ganas que nunca. Pero la forma de conectarlos
-            sigue siendo un chat de WhatsApp, el mismo grupo de siempre y una agenda que nunca calza.
-            LIG existe para cambiar eso.
-          </p>
         </div>
 
-        <div class="pain-list">
-          <article class="pain-card">
-            <h3>Siempre los mismos cuatro</h3>
-            <p>Tu red real de juego es más pequeña de lo que debería ser. Si uno no puede, el partido muere. LIG la expande.</p>
-          </article>
-          <article class="pain-card">
-            <h3>Nivel incierto, partidos dispares</h3>
-            <p>Sin un sistema de referencia, armas partidos a ciegas. La mitad termina siendo demasiado fácil o demasiado frustrante.</p>
-          </article>
-          <article class="pain-card">
-            <h3>Coordinar agota antes de jugar</h3>
-            <p>Cuatro personas, cuatro agendas, una cancha. La fricción para armar un partido es casi tan alta como el partido mismo.</p>
-          </article>
-          <article class="pain-card">
-            <h3>Juegas y desapareces</h3>
-            <p>No hay historial, no hay progresión, no hay identidad. Cada partido empieza de cero y termina en el olvido.</p>
-          </article>
+        <div class="problem-grid">
+          <div class="problem-dark">
+            <h2>El pádel creció. La forma de organizar buenos partidos, no.</h2>
+            <p>
+              Hay más jugadores, más canchas y más ganas que nunca. Pero encontrar gente de tu nivel
+              y armar partidos realmente competitivos sigue dependiendo del mismo grupo de WhatsApp.
+              LIG existe para cambiar eso.
+            </p>
+          </div>
+
+          <div class="pain-list">
+            <article class="pain-card">
+              <h3>Siempre los mismos cuatro</h3>
+              <p>Tu red de juego es más pequeña de lo que debería. Si uno no puede, el partido muere.</p>
+            </article>
+            <article class="pain-card">
+              <h3>Nivel incierto</h3>
+              <p>Sin una referencia clara, armas partidos a ciegas. La mitad termina siendo dispareja o aburrida.</p>
+            </article>
+            <article class="pain-card">
+              <h3>Coordinar cansa</h3>
+              <p>Cuatro personas, cuatro agendas y una cancha. A veces llegar al partido es el verdadero esfuerzo.</p>
+            </article>
+            <article class="pain-card">
+              <h3>Cada partido se pierde</h3>
+              <p>Juegas, mejoras y compites — pero nada queda. Sin historial, sin ranking, sin progreso visible.</p>
+            </article>
+          </div>
         </div>
       </div>
     </section>
 
     <div class="divider"></div>
 
-    <!-- ─── IDEA ──────────────────────────────────── -->
+    <!-- ─── QUÉ ES LIG ────────────────────────────── -->
     <section class="section" id="idea">
       <div class="wrap">
         <div class="section-head">
           <div class="section-kicker">Qué es LIG</div>
-          <h2>Una red competitiva que te hace jugar mejor, con más gente y con propósito.</h2>
-          <p class="section-lead">
-            LIG no es una app de reservas ni un grupo de WhatsApp mejorado. Es una infraestructura
-            deportiva: conecta jugadores en formatos que rotan parejas, construye niveles reales
-            y convierte cada partido en parte de una huella deportiva que te pertenece.
-          </p>
+          <h2>Más partidos, mejores cruces y formatos que funcionan. Eso es LIG.</h2>
         </div>
 
         <div class="value-grid">
           <article class="value-card">
             <div class="value-num">01</div>
-            <h3>Círculo expandido</h3>
-            <p>Conoces nuevos jugadores de tu nivel, zona y estilo. Tu red de pádel deja de ser un grupo cerrado.</p>
+            <h3>Jugadores compatibles</h3>
+            <p>Conectas con personas de tu nivel. Tu red de juego crece sola.</p>
           </article>
           <article class="value-card">
             <div class="value-num">02</div>
-            <h3>Formatos individuales</h3>
-            <p>Llegas solo. Compites como individuo. Rotas parejas cada set y tu rendimiento se mide contra todos.</p>
+            <h3>Menos coordinación</h3>
+            <p>Menos chats eternos, menos cancelaciones. LIG arma los cruces para que tú solo tengas que aparecer.</p>
           </article>
           <article class="value-card">
             <div class="value-num">03</div>
-            <h3>Huella deportiva</h3>
-            <p>Cada partido deja registro: partners, rivales, resultados, LIG Pts y una progresión que refleja quién eres.</p>
+            <h3>Competencia con formato</h3>
+            <p>Americanos, ligas, rankings, challenges. Formatos organizados donde competir tiene reglas, nivel y sentido.</p>
           </article>
           <article class="value-card">
             <div class="value-num">04</div>
-            <h3>Torneos premium</h3>
-            <p>A medida que construyes historial, accedes a competencias y torneos digitales del universo LIG.</p>
+            <h3>Huella deportiva</h3>
+            <p>Cada partido suma. Historial, ranking, LIG Pts y progreso. Lo que juegas deja de perderse.</p>
           </article>
-        </div>
-      </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- ─── LA DIFERENCIA ─────────────────────────── -->
-    <section class="section">
-      <div class="wrap network-panel">
-        <div class="network-copy">
-          <div class="section-kicker">El formato LIG</div>
-          <h2>Llegas solo. Te vas con más red, más nivel y más historial.</h2>
-          <p>
-            El formato individual rotativo de LIG resuelve el problema de raíz: no necesitas dupla fija,
-            no dependes de que te llamen, no coordinas eternamente. Llegas, compites, rotas.
-            Tu rendimiento habla por sí solo.
-          </p>
-          <div class="network-list">
-            <div class="network-item">
-              <span class="network-dot"></span>
-              <span>Cada set con una pareja diferente — tu nivel se mide de forma real e individual.</span>
-            </div>
-            <div class="network-item">
-              <span class="network-dot"></span>
-              <span>Conoces jugadores nuevos en cada jornada. Tu círculo crece solo.</span>
-            </div>
-            <div class="network-item">
-              <span class="network-dot"></span>
-              <span>LIG Pts acumula partido a partido — no hay forma de esconderse.</span>
-            </div>
-            <div class="network-item">
-              <span class="network-dot"></span>
-              <span>Con historial suficiente, desbloqueas acceso a torneos y competencias premium.</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="network-stat">
-          <div class="big-stat">Tu huella.</div>
-          <h3>El pádel que jugaste siempre existió. Ahora va a quedar registrado.</h3>
-          <p>
-            LIG construye la capa de datos que el pádel nunca tuvo: niveles reales, historiales verificables,
-            redes de juego vivas. Para jugadores que se toman el deporte en serio.
-          </p>
         </div>
       </div>
     </section>
@@ -1213,52 +848,65 @@
     <section class="section" id="como-funciona">
       <div class="wrap">
         <div class="section-head">
-          <div class="section-kicker">Cómo funciona</div>
-          <h2>Cuatro pasos para empezar a construir tu huella deportiva.</h2>
+          <div class="section-kicker">Cómo funciona LIG</div>
+          <h2>Distintos formatos, una misma huella deportiva.</h2>
           <p class="section-lead">
-            Desde que te registras hasta que acumulas historial y accedes a torneos premium,
-            LIG te lleva por un camino claro. Sin fricción de coordinación. Sin depender del mismo grupo.
+            Puedes entrar como jugador individual, unirte a un torneo abierto o competir dentro
+            de una comunidad cerrada. El formato cambia — tu historial siempre crece.
           </p>
         </div>
 
-        <div class="steps">
-          <article class="step-card">
-            <span class="step-index">01</span>
-            <h3>Crea tu perfil</h3>
-            <p>Declara tu zona, nivel aproximado, club habitual y disponibilidad. Eso es todo lo que LIG necesita para conectarte.</p>
-          </article>
-          <article class="step-card">
-            <span class="step-index">02</span>
-            <h3>Entra a una jornada</h3>
-            <p>Te incorporamos a un Americano LIG o competencia compatible con tu perfil. Llegas solo — LIG arma el resto.</p>
-          </article>
-          <article class="step-card">
-            <span class="step-index">03</span>
-            <h3>Construye tu historial</h3>
-            <p>Cada jornada suma LIG Pts, partners nuevos, rivales y estadísticas reales. Tu huella deportiva comienza a tomar forma.</p>
-          </article>
-          <article class="step-card">
-            <span class="step-index">04</span>
-            <h3>Escala en el universo LIG</h3>
-            <p>Con historial verificado, accedes a torneos digitales premium, mejores cruces y competencias de mayor nivel.</p>
-          </article>
+        <div class="network-panel">
+          <div class="network-copy">
+            <div class="section-kicker">La estructura LIG</div>
+            <h2>Un sistema. Muchos formatos. Una sola huella.</h2>
+            <p>LIG arma los fixtures, ordena los niveles y calendariza los partidos. Tú solo tienes que jugar.</p>
+
+            <div class="network-list">
+              <div class="network-item">
+                <span class="network-dot"></span>
+                <span><strong>Tu perfil:</strong> nivel y zona para entrar al formato correcto.</span>
+              </div>
+              <div class="network-item">
+                <span class="network-dot"></span>
+                <span><strong>Formatos:</strong> ligas y torneos en duplas o individuales — con calendario, cruces y resultados claros.</span>
+              </div>
+              <div class="network-item">
+                <span class="network-dot"></span>
+                <span><strong>Comunidades cerradas:</strong> clubes, colegios y empresas con sus propias reglas, temporadas y rankings.</span>
+              </div>
+              <div class="network-item">
+                <span class="network-dot"></span>
+                <span><strong>Más partidos:</strong> al entrar a una estructura organizada, juegas más seguido y con gente de tu nivel.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="network-stat">
+            <div class="big-stat">Tu huella.</div>
+            <h3>No importa dónde juegues: cada partido construye tu perfil.</h3>
+            <p>
+              LIG registra tu actividad competitiva y la convierte en algo tuyo: nivel, ranking,
+              historial, evolución y los rivales que te hicieron mejor jugador.
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
     <div class="divider"></div>
 
-    <!-- ─── COMUNIDADES ───────────────────────────── -->
+    <!-- ─── CLUBES Y COMUNIDADES ──────────────────── -->
     <section class="section" id="comunidades">
       <div class="wrap ecosystem">
         <div class="ecosystem-copy">
           <div>
             <div class="section-kicker">Clubes y comunidades</div>
-            <h2>Tienes la demanda. LIG la convierte en competencia organizada.</h2>
+            <h2>Tienes la comunidad. LIG organiza la competencia.</h2>
             <p>
-              Los clubes, empresas y comunidades ya tienen jugadores con ganas de jugar más.
-              LIG aporta la estructura: niveles, formatos, rankings y jornadas que funcionan
-              solas — sin que alguien tenga que coordinar todo por WhatsApp.
+              Clubes, empresas y comunidades cerradas ya tienen jugadores con ganas de jugar más.
+              LIG aporta los formatos, los fixtures y los rankings para que eso ocurra —
+              sin depender de que alguien lo coordine.
             </p>
           </div>
           <button class="btn btn-gold" onclick="goToForm()">Activar LIG en mi comunidad</button>
@@ -1267,84 +915,19 @@
         <div class="ecosystem-list">
           <article class="eco-card">
             <h3>Clubes de pádel</h3>
-            <p>Jornadas LIG que llenan canchas en horarios muertos, activan jugadores individuales y construyen comunidad competitiva propia.</p>
+            <p>Una herramienta de fidelización real. LIG genera recurrencia, acompaña el desarrollo de cada jugador y convierte tu club en una comunidad competitiva activa.</p>
           </article>
           <article class="eco-card">
             <h3>Empresas y RRHH</h3>
-            <p>Ligas internas que mezclan equipos, generan competencia sana y crean conexión real entre personas que solo se ven en Zoom.</p>
+            <p>Campeonatos internos que van más allá del deporte. LIG organiza la competencia y consolida relaciones entre equipos de una forma que ninguna reunión logra.</p>
           </article>
           <article class="eco-card">
-            <h3>Comunidades privadas</h3>
-            <p>Condominios, colegios, grupos de apoderados. LIG monta la competencia, tú solo invitas a tu gente.</p>
+            <h3>Comunidades cerradas</h3>
+            <p>LIG ordena la competencia y elimina la operatividad: fixtures, resultados y rankings se gestionan solos. Tu comunidad solo tiene que jugar.</p>
           </article>
           <article class="eco-card">
             <h3>Jugadores individuales</h3>
-            <p>Si tienes ganas de jugar más y mejor, LIG te da acceso a una red que no depende de si tu partner del martes puede o no.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- ─── BENEFICIOS LIG ───────────────────────── -->
-    <section class="section" id="beneficios">
-      <div class="wrap">
-        <div class="benefits-header">
-          <div>
-            <div class="section-kicker">Beneficios LIG</div>
-            <h2>Jugar más tiene sus recompensas.</h2>
-            <p>
-              Ser parte del universo LIG no es solo competir. A medida que construyes historial
-              y subes en el ranking, se abren accesos exclusivos: descuentos reales, productos
-              y premios para jugadores que se lo toman en serio.
-            </p>
-          </div>
-          <div class="benefits-badge">
-            <strong>LIG+</strong>
-            <span>Miembros</span>
-          </div>
-        </div>
-
-        <div class="benefits-grid">
-          <article class="benefit-card">
-            <div class="benefit-icon">🎾</div>
-            <h3>Descuentos en canchas</h3>
-            <p>
-              Acceso a tarifas preferenciales en clubes y canchas asociadas a la red LIG.
-              Juegas más, gastas menos, y cada sesión suma puntos al ranking.
-            </p>
-            <span class="benefit-tag">Red de clubes LIG</span>
-          </article>
-
-          <article class="benefit-card">
-            <div class="benefit-icon">🏷️</div>
-            <h3>Productos y equipamiento</h3>
-            <p>
-              Descuentos en palas, ropa y accesorios de marcas partner. Beneficios que escalan
-              con tu nivel — mientras más compites, mejor es el acceso.
-            </p>
-            <span class="benefit-tag">Marcas partner</span>
-          </article>
-
-          <article class="benefit-card">
-            <div class="benefit-icon">🏆</div>
-            <h3>Premios por rendimiento</h3>
-            <p>
-              Los torneos premium LIG tienen premios reales para los mejores rankeados.
-              Tu historial determina a qué competencias puedes acceder — y qué está en juego.
-            </p>
-            <span class="benefit-tag">Torneos premium</span>
-          </article>
-
-          <article class="benefit-card">
-            <div class="benefit-icon">⚡</div>
-            <h3>Acceso anticipado</h3>
-            <p>
-              Los jugadores fundadores y con mayor historial tienen prioridad en jornadas
-              de alta demanda, cruces especiales y nuevas funciones del universo LIG.
-            </p>
-            <span class="benefit-tag">Solo miembros LIG</span>
+            <p>Entra a una estructura donde los partidos ya están organizados. Juega más, conoce nuevos partners y compite con gente de tu nivel.</p>
           </article>
         </div>
       </div>
@@ -1355,14 +938,11 @@
       <div class="wrap">
         <div class="cta-panel">
           <div>
-            <h2>Hay jugadores en tu zona esperando exactamente lo mismo que tú.</h2>
-            <p>
-              Entrar a LIG no es descargar una app. Es entrar a una red que ya está tomando forma.
-              Cuanto antes entres, mayor es tu ventaja competitiva dentro del universo LIG.
-            </p>
+            <h2>Más partidos, nuevos rivales, tu propio ranking.</h2>
+            <p>Todo empieza cuando entras a LIG.</p>
           </div>
           <div class="cta-actions">
-            <button class="btn btn-dark" onclick="goToForm()">Únete a LIG al universo LIG</button>
+            <button class="btn btn-dark" onclick="goToForm()">Únete a LIG</button>
             <button class="btn btn-light" onclick="goToForm()">Activar LIG en mi comunidad</button>
           </div>
         </div>
@@ -1425,5 +1005,6 @@
       if (e.target.id === "formModal") closeModal();
     });
   </script>
+
 </body>
 </html>
