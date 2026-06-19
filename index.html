@@ -869,8 +869,8 @@
 </nav>
 
         <div class="nav-cta">
-          <button class="btn btn-gold" onclick="goToForm()">Únete a LIG</button>
-        </div>
+  <button class="btn btn-dark" onclick="goToLigApp()">Ver LIG</button>
+</div>
       </div>
     </header>
 
@@ -895,9 +895,9 @@
             </p>
 
             <div class="hero-actions">
-              <button class="btn btn-gold" onclick="goToForm()">Únete a LIG</button>
-              <button class="btn btn-light" onclick="goToForm()">Soy club o comunidad</button>
-            </div>
+  <button class="btn btn-gold" onclick="goToPlayerForm()">Únete a LIG</button>
+  <button class="btn btn-light" onclick="goToCommunityWhatsApp()">Soy club o comunidad</button>
+</div>
 
             <div class="microcopy">
               <span class="micro-dot"></span>
@@ -1168,7 +1168,7 @@
             recurrente y medible. LIG aporta formatos, fixtures, resultados, rankings e historial.
           </p>
         </div>
-        <button class="btn btn-gold" onclick="goToForm()">Activar LIG en mi comunidad</button>
+        <button class="btn btn-gold" onclick="goToCommunityWhatsApp()">Activar LIG en mi comunidad</button>
       </div>
 
       <div class="ecosystem-list">
@@ -1216,9 +1216,9 @@
               <p>Todo empieza cuando entras a LIG.</p>
             </div>
             <div class="cta-actions">
-              <button class="btn btn-dark" onclick="goToForm()">Únete a LIG</button>
-              <button class="btn btn-light" onclick="goToForm()">Activar LIG en mi comunidad</button>
-            </div>
+  <button class="btn btn-dark" onclick="goToPlayerForm()">Únete a LIG</button>
+  <button class="btn btn-light" onclick="goToCommunityWhatsApp()">Activar LIG en mi comunidad</button>
+</div>
           </div>
         </div>
       </section>
@@ -1252,33 +1252,48 @@
     </div>
 
     <script>
-      const FORM_URL = "#";
+  const LIG_APP_URL = "https://lig-app.com";
+  const PLAYER_FORM_URL = "https://forms.gle/TU_FORMULARIO";
+  const COMMUNITY_WHATSAPP_URL = "https://wa.me/569XXXXXXXX?text=Hola%2C%20quiero%20activar%20LIG%20en%20mi%20club%20o%20comunidad.%20Me%20gustar%C3%ADa%20conocer%20c%C3%B3mo%20funciona.";
 
-      function goToForm() {
-        if (FORM_URL && FORM_URL !== "#") {
-          window.open(FORM_URL, "_blank", "noopener,noreferrer");
-          return;
-        }
-        openModal();
-      }
+  function openExternal(url) {
+    if (!url || url.includes("TU_FORMULARIO") || url.includes("XXXXXXXX")) {
+      openModal();
+      return;
+    }
 
-      function openModal() {
-        const m = document.getElementById("formModal");
-        m.classList.add("show");
-        m.setAttribute("aria-hidden", "false");
-      }
+    window.open(url, "_blank", "noopener,noreferrer");
+  }
 
-      function closeModal() {
-        const m = document.getElementById("formModal");
-        m.classList.remove("show");
-        m.setAttribute("aria-hidden", "true");
-      }
+  function goToLigApp() {
+    openExternal(LIG_APP_URL);
+  }
 
-      document.addEventListener("keydown", e => { if (e.key === "Escape") closeModal(); });
-      document.getElementById("formModal").addEventListener("click", e => {
-        if (e.target.id === "formModal") closeModal();
-      });
-    </script>
+  function goToPlayerForm() {
+    openExternal(PLAYER_FORM_URL);
+  }
+
+  function goToCommunityWhatsApp() {
+    openExternal(COMMUNITY_WHATSAPP_URL);
+  }
+
+  function openModal() {
+    const m = document.getElementById("formModal");
+    m.classList.add("show");
+    m.setAttribute("aria-hidden", "false");
+  }
+
+  function closeModal() {
+    const m = document.getElementById("formModal");
+    m.classList.remove("show");
+    m.setAttribute("aria-hidden", "true");
+  }
+
+  document.addEventListener("keydown", e => { if (e.key === "Escape") closeModal(); });
+  document.getElementById("formModal").addEventListener("click", e => {
+    if (e.target.id === "formModal") closeModal();
+  });
+</script>
 
   </body>
   </html>
